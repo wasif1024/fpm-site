@@ -1,57 +1,58 @@
 -- import: wasif1024.github.io/fpm-site/assets
 
 
+-- import: fpm
 
--- ds.page: Welcome to your [FPM site](https://fpm.dev/)
-
-FPM Blank Package Template Repo
-
-🧑‍🚀 **Seasoned traveler?** update this file. Enjoy!
+-- ds.page: Welcome
 
 
---- ds.image: doc-site
-src: $assets.files.doc-site-example.png
-width: fill
+/--- ds.image: doc-site
+/src: $assets.files.doc-site-example.png
+/width: fill
+
+-- record user-details:
+boolean is-login:
+$always-include$: true
+
+-- user-details ud:
+$processor$: user-details
+is-login: false
 
 
---- ds.h1: 🚀 Project Structure
+-- ftd.color white-color:
+dark: white
+light: white
 
-Inside of your FPM project, you'll see the following folders and files:
+-- ftd.column:
+background-color: $white-color
 
+--- ftd.text: Login With GitHub
+if: not $ud.is-login
+link: /auth/login/?platform=github
+role: $fpm.type.heading-large
 
---- ds.code:
-lang:
+--- ftd.text: Logout
+if: $ud.is-login
+link: /auth/logout/
+role: $fpm.type.heading-large
 
-/
-├── .build/
-│   └── index.html
-├── .packages/
-│   └── fifthtry.github.io/
-│   	└── All downloaded dependencies
-│   	
-├── FPM.ftd
-├── index.ftd
-└── README.md
+--- ftd.text: Login With Discord
+if: not $ud.is-login
+link: /auth/login/?platform=discord
+role: $fpm.type.heading-large
 
+--- ftd.text: Login With Telegram
+if: not $ud.is-login
+link: /auth/login/?platform=telegram
+role: $fpm.type.heading-large
 
+--- ftd.text: Login With Gmail
+if: not $ud.is-login
+link: /auth/login/?platform=gmail
+role: $fpm.type.heading-large
 
---- ds.h1: 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
---- ds.code:
-lang:
-
-=======================================================================
-| Command                | Action                                     |
-| :--------------------- | :----------------------------------------- |
-| fpm build              | FPM builder installs all `FPM` dependencies|
-| fpm serve              | Starts local dev server at available port  |
-|                        | `localhost:8000`                           |
-=======================================================================
-
-
---- ds.h1: 👀 Want to learn more?
-
-Feel free to check [our documentation](https://fpm.dev/) or jump into our [FifthTry Discord server](https://discord.gg/bucrdvptYd).
+--- ftd.text: Login With Slack
+if: not $ud.is-login
+link: /auth/login/?platform=slack
+role: $fpm.type.heading-large
 

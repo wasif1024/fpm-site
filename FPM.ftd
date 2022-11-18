@@ -6,3 +6,54 @@ download-base-url: https://raw.githubusercontent.com/wasif1024/fpm-site/main
 -- fpm.dependency: fifthtry.github.io/doc-site as ds
 
 -- fpm.auto-import: ds
+
+-- fpm.user-group: fpm-fans
+github-starred: ftd-lang/fpm
+
+
+-- fpm.user-group: ftd-fans
+github-watches: ftd-lang/ftd
+
+-- fpm.user-group: ftd-followers
+github-follows: ftd-lang
+
+-- fpm.user-group: ftd-contributors
+github-contributor: ftd-lang/fpm
+
+-- fpm.user-group: ftd-collaborators
+github-collaborator: ftd-lang/fpm
+
+-- fpm.user-group: ftd-teams
+github-team: wasif-test-organization/wasif-team
+
+/-- fpm.user-group: ftd-sponsor
+/github-sponsors: weiznich
+
+-- fpm.sitemap:
+
+# Home: /
+nav-title: Home
+data: Section Data
+
+
+## Profile: /profile/
+readers: fpm-fans
+
+
+## Watch: /watch/
+readers: ftd-fans
+
+## Followed: /follower/
+readers: ftd-followers
+
+## Contributors: /contributor/
+readers: ftd-contributors
+
+## Collaborator: /collaborators/
+readers: ftd-collaborators
+
+## Team: /teams/
+readers: ftd-teams
+
+/## Sponsors: /sponsors/
+/readers: ftd-sponsor

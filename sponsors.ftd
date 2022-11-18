@@ -1,0 +1,31 @@
+-- import: wasif1024.github.io/fpm-site/assets
+
+
+-- import: fpm
+
+-- ds.page: Sponsored Accounts
+
+
+-- record user-details:
+boolean is-login:
+$always-include$: true
+
+-- user-details ud:
+$processor$: user-details
+is-login: false
+
+
+-- ftd.color white-color:
+dark: white
+light: white
+
+-- ftd.column:
+background-color: $white-color
+
+--- ftd.text: Sponsored Accounts
+
+
+--- ftd.text: Logout
+if: $ud.is-login
+link: /auth/logout/
+role: $fpm.type.heading-large
